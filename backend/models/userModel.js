@@ -26,11 +26,11 @@ userSchema.statics.signup = async function (email, password) {
   }
 
   if (!validator.isEmail(email)) {
-    throw Error("Email is not valid");
+    throw new Error("Email is not valid");
   }
 
   if (!validator.isStrongPassword(password)) {
-    throw Error("Password not strong enough");
+    throw new Error("Password not strong enough");
   }
 
   // se usa el this en vez de User, debido a que el objeto se exporta y en este ambito aun no esta creado
